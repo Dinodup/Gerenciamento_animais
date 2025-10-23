@@ -6,6 +6,61 @@
  * Data: 2025-10-xx
  * Versão: 1.0
  * Descrição: Gerenciamento simples de animais em um zoológico.
+
+<pre><b>main.c:</b> In function ‘<b>zoo_add_habitat</b>’:
+<b>main.c:122:5:</b> <font color="#CC58CC"><b>warning: </b></font>ISO C90 forbids mixed declarations and code [<font color="#CC58CC"><b>-Wdeclaration-after-statement</b></font>]
+  122 |     <font color="#CC58CC"><b>int</b></font> id = z-&gt;num_habitats;
+      |     <font color="#CC58CC"><b>^~~</b></font>
+<b>main.c:</b> In function ‘<b>add_animal_to_habitat</b>’:
+<b>main.c:153:5:</b> <font color="#CC58CC"><b>warning: </b></font>ISO C90 forbids mixed declarations and code [<font color="#CC58CC"><b>-Wdeclaration-after-statement</b></font>]
+  153 |     <font color="#CC58CC"><b>AnimalNode</b></font> *n = create_animal_node(&amp;a);
+      |     <font color="#CC58CC"><b>^~~~~~~~~~</b></font>
+<b>main.c:</b> In function ‘<b>remove_animal_from_habitat_by_id</b>’:
+<b>main.c:164:5:</b> <font color="#CC58CC"><b>warning: </b></font>ISO C90 forbids mixed declarations and code [<font color="#CC58CC"><b>-Wdeclaration-after-statement</b></font>]
+  164 |     <font color="#CC58CC"><b>AnimalNode</b></font> *prev = NULL, *cur = h-&gt;head;
+      |     <font color="#CC58CC"><b>^~~~~~~~~~</b></font>
+<b>main.c:</b> In function ‘<b>vet_dequeue</b>’:
+<b>main.c:206:5:</b> <font color="#CC58CC"><b>warning: </b></font>ISO C90 forbids mixed declarations and code [<font color="#CC58CC"><b>-Wdeclaration-after-statement</b></font>]
+  206 |     <font color="#CC58CC"><b>Animal</b></font> *a = q-&gt;items[q-&gt;front];
+      |     <font color="#CC58CC"><b>^~~~~~</b></font>
+<b>main.c:</b> In function ‘<b>inserir_novo_animal</b>’:
+<b>main.c:228:5:</b> <font color="#CC58CC"><b>warning: </b></font>ISO C90 forbids mixed declarations and code [<font color="#CC58CC"><b>-Wdeclaration-after-statement</b></font>]
+  228 |     <font color="#CC58CC"><b>Animal</b></font> a;
+      |     <font color="#CC58CC"><b>^~~~~~</b></font>
+<b>main.c:</b> In function ‘<b>finalizar_atendimento</b>’:
+<b>main.c:338:5:</b> <font color="#CC58CC"><b>warning: </b></font>ISO C90 forbids mixed declarations and code [<font color="#CC58CC"><b>-Wdeclaration-after-statement</b></font>]
+  338 |     <font color="#CC58CC"><b>Habitat</b></font> *h = zoo_get_habitat(z, destino_habitat);
+      |     <font color="#CC58CC"><b>^~~~~~~</b></font>
+<b>main.c:</b> In function ‘<b>listar_tudo</b>’:
+<b>main.c:377:9:</b> <font color="#CC58CC"><b>warning: </b></font>ISO C90 forbids mixed declarations and code [<font color="#CC58CC"><b>-Wdeclaration-after-statement</b></font>]
+  377 |         <font color="#CC58CC"><b>AnimalNode</b></font> *cur = h-&gt;head;
+      |         <font color="#CC58CC"><b>^~~~~~~~~~</b></font>
+<b>main.c:392:13:</b> <font color="#CC58CC"><b>warning: </b></font>ISO C90 forbids mixed declarations and code [<font color="#CC58CC"><b>-Wdeclaration-after-statement</b></font>]
+  392 |             <font color="#CC58CC"><b>Animal</b></font> *a = z-&gt;vet_queue.items[idx];
+      |             <font color="#CC58CC"><b>^~~~~~</b></font>
+<b>main.c:</b> In function ‘<b>salvar_para_arquivo</b>’:
+<b>main.c:403:5:</b> <font color="#CC58CC"><b>warning: </b></font>ISO C90 forbids mixed declarations and code [<font color="#CC58CC"><b>-Wdeclaration-after-statement</b></font>]
+  403 |     <font color="#CC58CC"><b>int</b></font> i;
+      |     <font color="#CC58CC"><b>^~~</b></font>
+<b>main.c:415:5:</b> <font color="#CC58CC"><b>warning: </b></font>ISO C90 forbids mixed declarations and code [<font color="#CC58CC"><b>-Wdeclaration-after-statement</b></font>]
+  415 |     <font color="#CC58CC"><b>int</b></font> i2, idx;
+      |     <font color="#CC58CC"><b>^~~</b></font>
+<b>main.c:418:9:</b> <font color="#CC58CC"><b>warning: </b></font>ISO C90 forbids mixed declarations and code [<font color="#CC58CC"><b>-Wdeclaration-after-statement</b></font>]
+  418 |         <font color="#CC58CC"><b>Animal</b></font> *a = z-&gt;vet_queue.items[idx];
+      |         <font color="#CC58CC"><b>^~~~~~</b></font>
+<b>main.c:</b> In function ‘<b>carregar_de_arquivo</b>’:
+<b>main.c:436:5:</b> <font color="#CC58CC"><b>warning: </b></font>ISO C90 forbids mixed declarations and code [<font color="#CC58CC"><b>-Wdeclaration-after-statement</b></font>]
+  436 |     <font color="#CC58CC"><b>int</b></font> i;
+      |     <font color="#CC58CC"><b>^~~</b></font>
+<b>main.c:453:5:</b> <font color="#CC58CC"><b>warning: </b></font>ISO C90 forbids mixed declarations and code [<font color="#CC58CC"><b>-Wdeclaration-after-statement</b></font>]
+  453 |     <font color="#CC58CC"><b>char</b></font> line[512];
+      |     <font color="#CC58CC"><b>^~~~</b></font>
+<b>main.c:</b> In function ‘<b>main</b>’:
+<b>main.c:568:5:</b> <font color="#CC58CC"><b>warning: </b></font>ISO C90 forbids mixed declarations and code [<font color="#CC58CC"><b>-Wdeclaration-after-statement</b></font>]
+  568 |     <font color="#CC58CC"><b>int</b></font> i;
+      |     <font color="#CC58CC"><b>^~~</b></font>
+</pre>
+ 
  *************************************************/
 
 #include <stdio.h>
@@ -598,3 +653,4 @@ int main(void) {
     }
     return 0;
 }
+
