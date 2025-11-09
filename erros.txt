@@ -1,0 +1,107 @@
+aluno@algp1:~/Desktop/Códigos/zoologico$ gcc *.c -o zoologico -ansi -pedantic -Wall
+animal.c: In function ‘criarAnimal’:
+animal.c:51:5: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+   51 |     char porteChar;
+      |     ^~~~
+animal.c: In function ‘cadastrarAnimal’:
+animal.c:75:5: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+   75 |     Animal *novo = criarAnimal();
+      |     ^~~~~~
+animal.c: In function ‘buscarRec’:
+animal.c:93:5: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+   93 |     Animal *a = hab->animais;
+      |     ^~~~~~
+animal.c: In function ‘buscarAnimalRecursivo’:
+animal.c:109:5: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+  109 |     int id;
+      |     ^~~
+animal.c:113:5: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+  113 |     Animal *encontrado = buscarRec(zoo, id);
+      |     ^~~~~~
+animal.c: In function ‘alterarAnimal’:
+animal.c:151:5: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+  151 |     int op;
+      |     ^~~
+animal.c: In function ‘removerAnimal’:
+animal.c:190:5: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+  190 |     Habitat *habAtual = zoo;
+      |     ^~~~~~~
+arquivo.c: In function ‘salvarDados’:
+arquivo.c:31:5: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+   31 |     Habitat *hab = inicio;
+      |     ^~~~~~~
+arquivo.c:36:9: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+   36 |         struct animal *a = hab->animais;
+      |         ^~~~~~
+arquivo.c: In function ‘carregarDados’:
+arquivo.c:62:5: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+   62 |     Habitat *zoo = *inicio;
+      |     ^~~~~~~
+arquivo.c:69:5: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+   69 |     char linha[256];
+      |     ^~~~
+arquivo.c:74:9: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+   74 |         struct animal *novo = (struct animal*) malloc(sizeof(struct animal));
+      |         ^~~~~~
+arquivo.c:81:53: warning: format ‘%d’ expects argument of type ‘int *’, but argument 9 has type ‘struct habitat **’ [-Wformat=]
+   81 |         sscanf(linha, "%d;%49[^;];%49[^;];%c;%c;%d;%d",
+      |                                                    ~^
+      |                                                     |
+      |                                                     int *
+   82 |                &novo->id, novo->nome, novo->especie, &novo->dieta,
+   83 |                &novo->saude, &novo->porte, &novo->h);
+      |                                            ~~~~~~~~  
+      |                                            |
+      |                                            struct habitat **
+arquivo.c:86:9: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+   86 |         int idHab = 0;
+      |         ^~~
+arquivo.c:89:9: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+   89 |         Habitat *hab = zoo;
+      |         ^~~~~~~
+fila.c:34:8: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘.’ token
+   34 | habitat.c:29:5:
+      |        ^
+fila.c: In function ‘adicionarFilaMed’:
+fila.c:58:5: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+   58 |     int id;
+      |     ^~~
+fila.c:63:5: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+   63 |     Habitat *h = zoo;
+      |     ^~~~~~~
+fila.c: In function ‘atenderAnimalFila’:
+fila.c:106:5: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+  106 |     struct animal *a = f->fila[f->inicio];
+      |     ^~~~~~
+fila.c: In function ‘listarFilaMed’:
+fila.c:124:5: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+  124 |     int i, pos;
+      |     ^~~
+habitat.c: In function ‘transferirAnimal’:
+habitat.c:124:5: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+  124 |     int id;
+      |     ^~~
+habitat.c:128:5: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+  128 |     Habitat *habOrigem = inicio;
+      |     ^~~~~~~
+habitat.c:156:5: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+  156 |     int tipo;
+      |     ^~~
+habitat.c:162:9: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+  162 |         int idDestino;
+      |         ^~~
+habitat.c:165:9: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+  165 |         Habitat *destino = inicio;
+      |         ^~~~~~~
+habitat.c: In function ‘liberarHabitats’:
+habitat.c:219:9: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+  219 |         Habitat *tmpHab = auxHab;
+      |         ^~~~~~~
+utils.c: In function ‘liberarMemoria’:
+utils.c:29:5: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+   29 |     Habitat *h = zoo;
+      |     ^~~~~~~
+utils.c:37:9: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+   37 |         Habitat *tmpH = h;
+      |         ^~~~~~~
+
