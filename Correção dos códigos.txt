@@ -1,6 +1,8 @@
 Correção dos códigos
 
-- ID de animais repetidos não pode ocorrer, um aviso será dado ao final do cadastro do animal
+*** ID de animais repetidos não pode ocorrer, um aviso será dado ao final do cadastro do animal
+
+*** animais de mesma espécie não podem conviver em um mesmo habitat, o programa deve identificar na hora do cadastro se no habitat que o usuário selecionou não tem algum animal de espécie diferente ou tiver espaço disponivel para aquele animal ser posto. Em resumo o programa deve comparar as 2 espécies de animais, a que está no habitat (caso exista) e a que será colocada.
 
 - O problema de cima implica para as outras etapas, como exemplo na busca o código está fornecendo os dados do primeiro animal cadastrado com aquele ID
 
@@ -23,4 +25,4 @@ ID %d, NOME: %s, ESPÉCIE: %s
 
 - Não deveria existir a opção remover animal, apenas Transferir animal, em que o usuário escolhe se será uma transferência interna(muda para outro habitat dentro do zoológico) ou externa (remove do zoológico)
 
-- animais de mesma espécie não podem conviver em um mesmo habitat, o programa deve identificar na hora do cadastro se no habitat que o usuário selecionou não tem algum animal de espécie diferente ou tiver espaço disponivel para aquele animal ser posto. Em resumo o programa deve comparar as 2 espécies de animais, a que está no habitat (caso exista) e a que será colocada.
+- quando é buscado o ID de um animal deveria aparecer em qual habitat ele está
