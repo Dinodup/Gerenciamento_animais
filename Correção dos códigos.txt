@@ -12,7 +12,7 @@ Correção dos códigos
 
 *** O alterar dados deveria continuar mostrando ao usuário as opções de alteração do animal selecionado até que ele selecione a opção cancelar, no código atual, o usuário só pode mudar uma coisa e se quiser alterar outro dado deve fazer o processo todo de novo
 
-*-- quando o usuário escolhe alterar o habitat do animal é chamada a função de transferencia externa e interna, não seria mais facil e lógico ir para a função de  escolherHabitat?
+*** quando o usuário escolhe alterar o habitat do animal é chamada a função de transferencia externa e interna, não seria mais facil e lógico ir para a função de  escolherHabitat?
 
 - No arquivo animal.txt os animais devem aparecer em "tabela", sendo:
 HABITAT %d | TAMANHO %d | OCUPADO %d
@@ -28,4 +28,5 @@ ID %d, NOME: %s, ESPÉCIE: %s
 - O Medicar animal precisa ser revisado quanto suas ações, há momentos em que o código para de funcionar e encerra o processo
 
 - Não deveria existir a opção remover animal, apenas Transferir animal, em que o usuário escolhe se será uma transferência interna(muda para outro habitat dentro do zoológico) ou externa (remove do zoológico)
+
 
