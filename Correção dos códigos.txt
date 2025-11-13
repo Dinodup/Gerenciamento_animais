@@ -14,6 +14,8 @@ Correção dos códigos
 
 *** quando o usuário escolhe alterar o habitat do animal é chamada a função de transferencia externa e interna, não seria mais facil e lógico ir para a função de  escolherHabitat?
 
+*** Não deveria existir a opção remover animal, apenas Transferir animal, em que o usuário escolhe se será uma transferência interna(muda para outro habitat dentro do zoológico) ou externa (remove do zoológico)
+
 - No arquivo animal.txt os animais devem aparecer em "tabela", sendo:
 HABITAT %d | TAMANHO %d | OCUPADO %d
 ID %d, NOME: %s, ESPÉCIE: %s
@@ -26,7 +28,4 @@ ID %d, NOME: %s, ESPÉCIE: %s
 - A opção 7 está repetindo sua ação, ou seja, quando há animais já cadastrados no sistema e são salvos no arquivo animal.txt mais de uma vez, a informação deles se repete, o que não era previsto para acontecer
 
 - O Medicar animal precisa ser revisado quanto suas ações, há momentos em que o código para de funcionar e encerra o processo
-
-- Não deveria existir a opção remover animal, apenas Transferir animal, em que o usuário escolhe se será uma transferência interna(muda para outro habitat dentro do zoológico) ou externa (remove do zoológico)
-
 
