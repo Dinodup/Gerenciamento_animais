@@ -18,7 +18,7 @@ Correção dos códigos
 
 *** Algo está acontecendo de errado na opção 6 e/ou 7está no qual estão repetindo sua ação, ou seja, quando há animais já cadastrados no sistema eles são salvos no arquivo animal.txt mais de uma vez, a informação deles se repete, o que não era previsto para acontecer,
 
-- No arquivo animal.txt os animais devem aparecer em "tabela", sendo:
+*** No arquivo animal.txt os animais devem aparecer em "tabela", sendo:
 HABITAT %d | TAMANHO %d | OCUPADO %d
 ID %d, NOME: %s, ESPÉCIE: %s
 
@@ -27,6 +27,7 @@ ID %d, NOME: %s, ESPÉCIE: %s
 ID %d, NOME: %s, ESPÉCIE: %s
 ID %d, NOME: %s, ESPÉCIE: %s
 
-- O Medicar animal precisa ser revisado quanto suas ações, há momentos em que o código para de funcionar e encerra o processo
+*** O Medicar animal precisa ser revisado quanto suas ações, há momentos em que o código para de funcionar e encerra o processo
 
+- Quando um animal é colocado para a medicação logo no cadastro ele não entra na fila, algo que deve ser arrumado
 
