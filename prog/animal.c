@@ -19,17 +19,24 @@
 #include "utils.h"
 #include "fila.h"
 
-/*--------------------------------------------------------------
- * Funcao auxiliar: criarAnimalSemID
- * Descricao:
- *      Le dados do usuario e aloca um novo animal sem ID.
- * Pre-condicao:
- *      - Nenhuma
- * Pos-condicao:
- *      - Retorna ponteiro para Animal alocado em memoria
+/*-------------------------------------------------------------
+ * Nome: criarAnimalSemID
+ * Objetivo:
+ *      Ler os dados fornecidos pelo usuário e criar um novo
+ *      registro de Animal ainda sem ID atribuído.
+ * Entrada:
+ *      - nenhuma (leitura via teclado)
+ * Saida:
+ *      - ponteiro para Animal alocado dinamicamente
+ * Pre-condicoes:
+ *      - nenhuma
+ * Pos-condicoes:
+ *      - Animal criado com atributos preenchidos e ponteiros
+ *        inicializados
  * Complexidade:
- *      - O(1)
- --------------------------------------------------------------*/
+ *      - Tempo: O(1)
+ *      - Espaco: O(1)
+ -------------------------------------------------------------*/
 static Animal* criarAnimalSemID() {
     Animal *novo;
     char porteChar;
@@ -72,17 +79,25 @@ static Animal* criarAnimalSemID() {
     return novo;
 }
 
-/*--------------------------------------------------------------
- * Funcao: idAnimalExiste
- * Descricao:
- *      Verifica se um ID ja existe em qualquer habitat.
- * Pre-condicao:
+/*-------------------------------------------------------------
+ * Nome: idAnimalExiste
+ * Objetivo:
+ *      Verificar se um determinado ID já está presente em
+ *      algum dos habitats do zoológico.
+ * Entrada:
+ *      - inicio: ponteiro para a lista de habitats
+ *      - idProcurado: ID a ser verificado
+ * Saida:
+ *      - 1 se o ID existe
+ *      - 0 caso contrário
+ * Pre-condicoes:
  *      - inicio != NULL
- * Pos-condicao:
- *      - Retorna 1 se existir, 0 caso contrario
+ * Pos-condicoes:
+ *      - nenhuma
  * Complexidade:
- *      - O(n)
- --------------------------------------------------------------*/
+ *      - Tempo: O(n) percorrendo todos os animais
+ *      - Espaco: O(1)
+ -------------------------------------------------------------*/
 int idAnimalExiste(Habitat *inicio, int idProcurado) {
     Habitat *h = inicio;
 
@@ -98,17 +113,24 @@ int idAnimalExiste(Habitat *inicio, int idProcurado) {
     return 0;
 }
 
-/*--------------------------------------------------------------
- * Funcao: cadastrarAnimal
- * Descricao:
- *      Cadastra um novo animal garantindo ausencia de IDs duplicados.
- * Pre-condicao:
+/*-------------------------------------------------------------
+ * Nome: cadastrarAnimal
+ * Objetivo:
+ *      Realizar o cadastro de um novo animal, garantindo ID
+ *      único e inserção no habitat compatível com seu porte.
+ * Entrada:
+ *      - zoo: ponteiro para o primeiro habitat
+ * Saida:
+ *      - nenhuma
+ * Pre-condicoes:
  *      - zoo != NULL
- * Pos-condicao:
- *      - Animal criado, validado e inserido no habitat adequado
+ * Pos-condicoes:
+ *      - novo animal criado, validado e inserido no habitat
+ *        adequado
  * Complexidade:
- *      - O(n)
- --------------------------------------------------------------*/
+ *      - Tempo: O(n) devido à busca por ID e seleção de habitat
+ *      - Espaco: O(1)
+ -------------------------------------------------------------*/
 void cadastrarAnimal(Habitat *zoo) {
     Animal *novo;
     Habitat *hab;
@@ -150,17 +172,25 @@ void cadastrarAnimal(Habitat *zoo) {
     printf("Animal cadastrado com sucesso.\n");
 }
 
-/*--------------------------------------------------------------
- * Funcao auxiliar recursiva: buscarRec
- * Descricao:
- *      Procura animal por ID percorrendo recursivamente habitats.
- * Pre-condicao:
- *      - hab != NULL ou cadeia de habitats inicializada
- * Pos-condicao:
- *      - Retorna ponteiro para Animal ou NULL se nao encontrado
+/*-------------------------------------------------------------
+ * Nome: buscarRec
+ * Objetivo:
+ *      Buscar recursivamente um animal por ID percorrendo
+ *      habitats e suas listas internas.
+ * Entrada:
+ *      - hab: habitat atual da recursão
+ *      - id: ID procurado
+ * Saida:
+ *      - ponteiro para Animal se encontrado
+ *      - NULL caso contrário
+ * Pre-condicoes:
+ *      - cadeia de habitats inicializada
+ * Pos-condicoes:
+ *      - nenhuma
  * Complexidade:
- *      - O(n)
- --------------------------------------------------------------*/
+ *      - Tempo: O(n)
+ *      - Espaco: O(n) devido à recursão
+ -------------------------------------------------------------*/
 static Animal* buscarRec(Habitat *hab, int id) {
     Animal *a;
 
@@ -176,32 +206,45 @@ static Animal* buscarRec(Habitat *hab, int id) {
     return buscarRec(hab->prox, id);
 }
 
-/*--------------------------------------------------------------
- * Funcao: buscarAnimalRecursivo
- * Descricao:
- *      Encapsula a funcao recursiva auxiliar buscarRec.
- * Pre-condicao:
+/*-------------------------------------------------------------
+ * Nome: buscarAnimalRecursivo
+ * Objetivo:
+ *      Encapsular e iniciar a busca recursiva por um animal
+ *      através da função auxiliar buscarRec.
+ * Entrada:
+ *      - inicio: primeiro habitat
+ *      - id: ID procurado
+ * Saida:
+ *      - ponteiro para Animal encontrado ou NULL
+ * Pre-condicoes:
  *      - inicio != NULL
- * Pos-condicao:
- *      - Retorna o animal ou NULL
+ * Pos-condicoes:
+ *      - nenhuma
  * Complexidade:
- *      - O(n)
- --------------------------------------------------------------*/
+ *      - Tempo: O(n)
+ *      - Espaco: O(n) pela recursão
+ -------------------------------------------------------------*/
 Animal* buscarAnimalRecursivo(Habitat *inicio, int id) {
     return buscarRec(inicio, id);
 }
 
-/*--------------------------------------------------------------
- * Funcao: exibirAnimal
- * Descricao:
- *      Mostra informacoes completas de um animal.
- * Pre-condicao:
+/*-------------------------------------------------------------
+ * Nome: exibirAnimal
+ * Objetivo:
+ *      Exibir no terminal todos os dados armazenados de
+ *      um animal.
+ * Entrada:
+ *      - a: ponteiro para Animal válido
+ * Saida:
+ *      - nenhuma (apenas impressão)
+ * Pre-condicoes:
  *      - a != NULL
- * Pos-condicao:
- *      - Dados impressos no terminal
+ * Pos-condicoes:
+ *      - informações exibidas ao usuário
  * Complexidade:
- *      - O(1)
- --------------------------------------------------------------*/
+ *      - Tempo: O(1)
+ *      - Espaco: O(1)
+ -------------------------------------------------------------*/
 void exibirAnimal(const Animal *a) {
     if (!a) return;
 
@@ -220,17 +263,23 @@ void exibirAnimal(const Animal *a) {
     printf("=======================================\n");
 }
 
-/*--------------------------------------------------------------
- * Funcao: alterarAnimal
- * Descricao:
- *      Permite alterar dados de um animal existente.
- * Pre-condicao:
+/*-------------------------------------------------------------
+ * Nome: alterarAnimal
+ * Objetivo:
+ *      Permitir ao usuário modificar dados cadastrados de um
+ *      animal já existente, incluindo mudança de habitat.
+ * Entrada:
+ *      - zoo: ponteiro para a lista de habitats
+ * Saida:
+ *      - nenhuma
+ * Pre-condicoes:
  *      - zoo != NULL
- * Pos-condicao:
- *      - Dados do animal podem ser modificados
+ * Pos-condicoes:
+ *      - dados do animal podem ser atualizados
  * Complexidade:
- *      - O(n) devido a busca
- --------------------------------------------------------------*/
+ *      - Tempo: O(n) devido à busca do animal
+ *      - Espaco: O(1)
+ -------------------------------------------------------------*/
 void alterarAnimal(Habitat *zoo) {
     Animal *a;
     int op;
@@ -301,4 +350,5 @@ void alterarAnimal(Habitat *zoo) {
         }
     }
 }
+
 
