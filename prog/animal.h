@@ -39,50 +39,82 @@ typedef struct animal {
 } Animal;
 
 /*-------------------------------------------------------------
- * Funcao: cadastrarAnimal
+ * Nome: cadastrarAnimal
+ * Objetivo:
+ *      Realizar o cadastro de um novo animal, garantindo que
+ *      o ID seja unico e que o animal seja inserido no habitat
+ *      adequado ao seu porte.
+ * Entrada:
+ *      - zoo: ponteiro para a lista de habitats inicializada
+ * Saida:
+ *      - nenhuma
  * Pre-condicoes:
- *      - zoo != NULL (habitats inicializados)
+ *      - zoo != NULL
  * Pos-condicoes:
- *      - cria um novo animal e o insere no habitat apropriado
+ *      - novo animal criado e inserido no habitat apropriado
  * Complexidade:
- *      - O(n), dependendo da busca pelo habitat correto
+ *      - Tempo: O(n) para verificar IDs e escolher habitat
+ *      - Espaco: O(1)
  -------------------------------------------------------------*/
 void cadastrarAnimal(Habitat *zoo);
 
 /*-------------------------------------------------------------
- * Funcao: buscarAnimalRecursivo
+ * Nome: buscarAnimalRecursivo
+ * Objetivo:
+ *      Localizar um animal pelo ID utilizando busca recursiva
+ *      nos habitats encadeados.
  * Entrada:
- *      - inicio: primeiro habitat
- *      - id: identificacao do animal buscado
+ *      - inicio: primeiro habitat da lista
+ *      - id: identificacao do animal procurado
+ * Saida:
+ *      - ponteiro para Animal se encontrado
+ *      - NULL caso contrario
  * Pre-condicoes:
  *      - inicio != NULL
  * Pos-condicoes:
- *      - retorna ponteiro para Animal se encontrado
- *      - retorna NULL caso contrario
+ *      - nenhuma (nao modifica estruturas)
  * Complexidade:
- *      - O(n + m) usando recursao
+ *      - Tempo: O(n)
+ *      - Espaco: O(n) devido a recursao
  -------------------------------------------------------------*/
 Animal* buscarAnimalRecursivo(Habitat *inicio, int id);
 
 /*-------------------------------------------------------------
- * Funcao: alterarAnimal
+ * Nome: alterarAnimal
+ * Objetivo:
+ *      Permitir alteracao dos dados de um animal existente,
+ *      incluindo sua realocacao para outro habitat.
+ * Entrada:
+ *      - zoo: ponteiro para o primeiro habitat
+ * Saida:
+ *      - nenhuma
  * Pre-condicoes:
  *      - zoo != NULL
  * Pos-condicoes:
- *      - modifica campos do animal escolhido pelo usuario
+ *      - campos do animal podem ter sido modificados
  * Complexidade:
- *      - O(n) para localizar o animal e atualizar dados
+ *      - Tempo: O(n) para localizar e atualizar o animal
+ *      - Espaco: O(1)
  -------------------------------------------------------------*/
 void alterarAnimal(Habitat *zoo);
 
 /*-------------------------------------------------------------
- * Funcao: exibirAnimal
+ * Nome: exibirAnimal
+ * Objetivo:
+ *      Exibir todas as informacoes do animal informado.
+ * Entrada:
+ *      - a: ponteiro para Animal
+ * Saida:
+ *      - nenhuma (somente impressao)
  * Pre-condicoes:
  *      - a != NULL
  * Pos-condicoes:
- *      - imprime informacoes do animal
- * Complexidade: O(1)
+ *      - informacoes impressas na tela
+ * Complexidade:
+ *      - Tempo: O(1)
+ *      - Espaco: O(1)
  -------------------------------------------------------------*/
 void exibirAnimal(const Animal *a);
 
 #endif
+
