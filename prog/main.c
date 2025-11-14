@@ -22,18 +22,27 @@
 #include "utils.h"
 
 /*-------------------------------------------------------------
- * Funcao: menuMedico
+ * Nome: menuMedico
+ * Objetivo:
+ *      Exibir o menu veterinário e permitir operações sobre
+ *      a fila de medicação, como inserir, atender e listar
+ *      animais que necessitam de cuidados médicos.
  * Entrada:
- *      - zoo: ponteiro para a estrutura de habitats inicializada
- *      - fila: ponteiro para a fila de medicação inicializada
+ *      - zoo: ponteiro para a lista encadeada de habitats
+ *      - fila: ponteiro para a fila de medicação
+ * Saida:
+ *      - nenhuma
  * Pre-condicoes:
  *      - zoo != NULL
  *      - fila != NULL
- * Pos-condicao:
- *      - pode enfileirar, desenfileirar ou listar animais para medicacao
+ * Pos-condicoes:
+ *      - Animais podem ser inseridos ou removidos da fila
+ *        de acordo com as escolhas do usuário
  * Complexidade:
- *      - O(1) para operacoes basicas da fila
- *      - O(n) para listagem completa
+ *      - Tempo:
+ *          O(1) para enfileirar ou desenfileirar
+ *          O(n) para listar a fila completa
+ *      - Espaco: O(1)
  -------------------------------------------------------------*/
 void menuMedico(Habitat *zoo, FilaMed *fila) {
 
@@ -75,13 +84,25 @@ void menuMedico(Habitat *zoo, FilaMed *fila) {
 }
 
 /*-------------------------------------------------------------
- * Funcao principal do programa
- * Pre-condições:
- *      - Todas as funções internas e TADs devem estar implementados
- * Pos-condições:
- *      - Inicializa e libera memoria dos habitats e da fila
+ * Nome: main
+ * Objetivo:
+ *      Controlar o fluxo principal do programa, exibir o menu
+ *      geral ao usuário e acionar as funções responsáveis por
+ *      cadastro, busca, alteração, transferência, medicação e
+ *      manipulação de arquivos.
+ * Entrada:
+ *      - nenhuma (apenas entrada do usuário em tempo de execução)
+ * Saida:
+ *      - retorna 0 ao final da execução
+ * Pre-condicoes:
+ *      - Todos os TADs e funções internas devem estar corretamente
+ *        implementados e compilados
+ * Pos-condicoes:
+ *      - Memória alocada para habitats e fila é liberada antes
+ *        do encerramento do programa
  * Complexidade:
- *      - O(n) devido a buscas e operacoes iterativas
+ *      - Tempo: O(n) devido às operações iterativas e buscas
+ *      - Espaco: O(1) além das estruturas já alocadas
  -------------------------------------------------------------*/
 int main() {
     Habitat *zoo;
@@ -171,3 +192,4 @@ int main() {
     liberarMemoria(zoo, fila);
     return 0;
 }
+
